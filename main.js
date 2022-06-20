@@ -1,5 +1,6 @@
 const bookList = document.querySelector('#bookList');
 const inputText = document.querySelector('#inputText');
+const optionsList = document.querySelector('#options');
 
 let books = [];
 
@@ -21,7 +22,13 @@ async function loadBooks() {
 
 
 inputText.addEventListener('keyup', e => {
-  const newBooks = books.filter(book => book.title.toLowerCase().includes(inputText.value) || book.author.toLowerCase().includes(inputText.value));
+  let newBooks = [];
+
+  optionsList.value === 'title' ? newBooks = books.filter(book => book.title.toLowerCase().includes(inputText.value))
+  : optionsList.value === 'genre' ? newBooks = books.filter(book => book.genre.toLowerCase().includes(inputText.value))
+  : newBooks = books.filter(book => book.author.toLowerCase().includes(inputText.value));
+
+   
   renderBooks(newBooks);
 })
 
