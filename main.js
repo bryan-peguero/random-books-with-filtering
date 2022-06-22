@@ -5,7 +5,7 @@ const optionsList = document.querySelector('#options');
 let books = [];
 
 window.addEventListener('DOMContentLoaded', async() => {
-  bookList.innerHTML = 'L o a d i n g';
+  bookList.innerHTML = '<em>L o a d i n g</em>';
 
   const data = await loadBooks();
   books = data.data;
@@ -32,7 +32,18 @@ inputText.addEventListener('keyup', e => {
   renderBooks(newBooks);
 })
 
-const createBooksItems = books => books.map(e => `<li> <h1>${e.title}</h1> <p>${e.description}</p></li>`).join(' ');
+const createBooksItems = books => books.map(e => `<li> 
+<div class="card my-5">
+<div class="card-header">
+  ${e.title}
+</div>
+<div class="card-body">
+  <blockquote class="blockquote mb-0">
+    <p>${e.description}</p>
+    <footer class="blockquote-footer">${e.author}</footer>
+  </blockquote>
+</div>
+</div></li>`).join(' ');
 
 function renderBooks(books) {
   const itemBooks = createBooksItems(books);
