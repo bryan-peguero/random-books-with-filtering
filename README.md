@@ -2,4 +2,6 @@
 This is an easy web page using a fake api with fake data of books. You can also filter by name, author and genre.
 
 
-## ToDo: add style to the web page with Bootstrap and i think that's all... then I gonna what else can I do.
+## GIF of the project
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/66450785/174924622-36c8e684-3b2b-4bd9-8f52-f5e4ee7598b7.gif)
+
